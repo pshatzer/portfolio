@@ -27,9 +27,11 @@
 		endif; 
 		?>
 		<div id="wrap" class="wrapper">
+			<hr class="mobile">
 			<div id="port" class="portfolio" <?php if (!empty($biobg)) { ?> style="background-image:url('<?php echo $biobg;?>');" <?php } ?> >
 				<div class="portfolio-inner"><?php echo $bio; ?></div>
 			</div>
+			<hr class="mobile">
 			<?php $contentCount = 0;
 			$args = array(
             'post_type' => 'project',
