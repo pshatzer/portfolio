@@ -1,10 +1,10 @@
 <?php
-/**
- * The front page template file
- */
-get_header(); 
-$video = get_field('bg_video');
-$bio = get_field('bio');
+	/**
+	 * The front page template file
+	 */
+	get_header(); 
+	$video = get_field('bg_video');
+	$bio = get_field('bio');
 ?>
 
 <html>
@@ -21,8 +21,10 @@ $bio = get_field('bio');
   			</video>
 		</div>
 
-		<?php endwhile;
-		endif; ?>
+		<?php 
+		endwhile;
+		endif; 
+		?>
 		<div id="wrap" class="wrapper">
 			<div id="port" class="portfolio">
 				<div class="portfolio-inner"><?php echo $bio; ?></div>
