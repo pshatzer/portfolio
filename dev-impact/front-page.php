@@ -5,6 +5,7 @@
 	get_header(); 
 	$video = get_field('bg_video');
 	$bio = get_field('bio');
+	$biobg = get_field('bio_bg')
 ?>
 
 <html>
@@ -26,7 +27,7 @@
 		endif; 
 		?>
 		<div id="wrap" class="wrapper">
-			<div id="port" class="portfolio">
+			<div id="port" class="portfolio" <?php if (!empty($biobg)) { ?> style="background-image:url('<?php echo THEME_IMAGES.$biobg;?>');" <?php } ?> >
 				<div class="portfolio-inner"><?php echo $bio; ?></div>
 			</div>
 			<?php $contentCount = 0;
