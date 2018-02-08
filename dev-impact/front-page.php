@@ -27,7 +27,7 @@
 		endif; 
 		?>
 		<div id="wrap" class="wrapper">
-			<div id="port" class="portfolio" <?php if (!empty($biobg)) { ?> style="background-image:url('<?php echo THEME_IMAGES.$biobg;?>');" <?php } ?> >
+			<div id="port" class="portfolio" <?php if (!empty($biobg)) { ?> style="background-image:url('<?php echo $biobg;?>');" <?php } ?> >
 				<div class="portfolio-inner"><?php echo $bio; ?></div>
 			</div>
 			<?php $contentCount = 0;
