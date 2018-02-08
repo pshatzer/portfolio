@@ -5,7 +5,7 @@
 	get_header(); 
 	$video = get_field('bg_video');
 	$bio = get_field('bio');
-	$biobg = get_field('bio_bg')
+	$biobg = get_field('bio_bg');
 ?>
 
 <html>
