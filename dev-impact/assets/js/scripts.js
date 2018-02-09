@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
 	//For scrollable sidebar
 	$(".sidebar").stick_in_parent();
