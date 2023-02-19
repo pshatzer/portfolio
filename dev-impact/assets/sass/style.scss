@@ -14,8 +14,24 @@ html {
 			    text-align: center;
 			    text-shadow: 0px 1px 1px black;
 			    width:100%;
-				h1 {}
-				h2 {}
+				@media (max-width: 600px) {
+					margin-top: -75px;
+					h1 {
+						font-size: 26px;
+					}
+					h2 {
+						font-size: 22px;
+					}
+				}
+				@media (max-width: 420px) {
+					margin-top: -61px;
+					h1 {
+						font-size: 16px;
+					}
+					h2 {
+						font-size: 16px;
+					}
+				}
 			}
 		    video {
 		    	-webkit-transform: translateX(-50%) translateY(-50%);
@@ -37,15 +53,40 @@ html {
 			z-index:2;
 			position: absolute;
     		top: 100%;
+    		width:100%;
 			.portfolio {
 				text-align: center;
-				padding:200px 20% 200px 20%;
+				padding:200px 10%;
 				background-color:#f6f6f6;
-				background-position:50%;
-				background-size:cover;
+				background-position: 50%;
+    			background-size: cover;
+    			@media (max-width:1920px) {
+    				padding:200px 5%;
+    			}
+    			@media (max-width: 768px) {
+    				padding:40px 10%;
+    			}
+    			@media (max-width: 600px) {
+    				padding:40px 30px;
+    			}
 				.portfolio-inner {
-					background-color:rgba(255,255,255,.9);
-					padding:40px;
+					background-color: rgba(255,255,255,0.9);
+    				padding: 40px;
+    				max-width:1800px;
+    				display:inline-block;
+    				.col-container {
+    					display:flex;
+    					@media (max-width: 1024px) {
+    						display:block;
+    					}
+    					>div {
+	    					padding:20px;
+	    					flex-basis:33%;
+	    					@media (max-width: 1024px) {
+	    						flex-basis: auto;
+	    					}
+	    				}
+    				}
 					h1 {
 						margin:0 0 40px 0;
 					}
@@ -65,9 +106,15 @@ html {
 					position:relative;
 					.desktop {
 			    		display:block;
+			    		@media (max-width: 768px) {
+			    			display:none;
+			    		}
 			    	}
 			    	.mobile {
 			    		display:none;
+			    		@media (max-width: 768px) {
+			    			display:block;
+			    		}
 			    	}
 					.sidebar, .sidebar3 {
 						position: absolute;
@@ -120,6 +167,19 @@ html {
 									}
 								}
 							}
+						}
+					}
+					.sidebar3.mobile {
+						@media (max-width: 768px) {
+							position:static;
+							width:auto;
+							margin:30px 15%;
+						}
+						@media (max-width: 600px) {
+							margin:30px;
+						}
+						@media (max-width: 420px) {
+							margin:30px 20px;
 						}
 					}
 					.main {
@@ -220,353 +280,79 @@ html {
 							}
 						}
 					}
+					.main3.mobile {
+						@media (max-width: 768px) {
+							float:none;
+							width:auto;
+							padding: 40px 40px 0 40px;
+							img {
+								width:100%;
+								margin-bottom:40px;
+								&:last-of-type {margin-bottom:0;}
+							}
+						}
+						@media (max-width: 600px) {
+							padding: 30px 30px 0 30px;
+						}
+						@media (max-width: 420px) {
+							padding: 40px 0;
+						}
+					}
 				}
 			}
 		}
-		hr {
-			&.mobile {
-				padding: 5px 0;
-   				margin: 0;
-    			background: white;
-			}
+		hr.mobile {
+			padding: 5px 0;
+				margin: 0;
+			background: white;
 		}
-		header {}
 		footer {
-			background:#313131;
+			background:#292929;
 			color:#ffffff;
-			font-weight:bold;
+			text-align: center;
+    		padding: 200px 10%;
+    		@media (max-width: 1024px) {
+    			padding: 200px 25%;
+    		}
+    		@media (max-width: 768px) {
+    			padding: 200px 15%;
+    		}
+    		@media (max-width: 600px) {
+    			padding: 200px 30px;
+    		}
 			.footer-wrapper {
-				max-width:980px;
-				margin: auto;
-				padding:40px;
-				position: relative;
+				max-width:1800px;
+				background:#313131;
+			    padding: 40px;
+			    display: inline-block;
+			    .col-wrapper {
+			    	display:flex;
+			    	text-align: left;
+			    	@media (max-width: 1024px) {
+			    		display:block;
+			    	}
+			    	>div {
+			    		flex-basis: 25%;
+			    		padding:20px;
+			    		@media (max-width: 1024px) {
+			    			flex-basis: auto;
+			    		}
+			    	}
+			    	h3 {
+			    		text-align: center;
+			    	}
+			    }
 				.footer-content {
-					display:inline-block;
-					width:32.5%;
-					vertical-align: top;
-					ul {
-						padding-left:20px;
-						a {
-							text-decoration: none;
-							color:#2d83a0;
-							list-style-type:none;
-							font-weight:normal;
-							font-size:14px;
-							li {
-
-							}
-						}
-						li {
-							font-weight:normal;
-							list-style-type: none;
-							font-size: 14px;
-							&#mail {
-								img {
-									height:13px;
-								}
-							}
-							&#num {
-								img {
-									height:9.5px;
-								}
-							}
-						}
+					a {
+						font-weight:normal;
+						list-style-type: none;
+						text-decoration: none;
+						color:#2d83a0;
+						font-size:20px;
+						text-align: left;
 					}
-					&#footer-contact {}
-					&#footer-sm {}
-					&#footer-location {}
-				}
-			}
-		}
-	}
-}
-
-@media (max-width: 768px) {
-	html {
-		body {
-			.intro {
-				.headlinetext {
-					h1 {}
-					h2 {}
-				}
-			    video {
-			    }
-			}
-			.wrapper {
-				.portfolio {
-					padding:40px 10% 45px 10%;
-					.portfolio-inner {
-						h1 {}
-						h2 {}
-						p {}
-					}
-				}
-				.innerwrapper {
-					.content {
-						.desktop {
-				    		display:none;
-				    	}
-				    	.mobile {
-				    		display:block;
-				    	}
-						.sidebar3 {
-							&.mobile {
-								position:static;
-								width:auto;
-								margin:30px 15%;
-							    h2 {}
-							    a {
-						    		&:hover {}
-						    	}
-							    p {}
-							    ul {
-						    		li {}
-						    	}
-							    .fixed-footer-nav {
-									a {
-										div {
-											span {
-												.dashicons {}
-											}
-										}
-									}
-								}
-							}
-						}
-						.main3 {
-							&.mobile {
-								float:none;
-								width:auto;
-								padding: 40px 40px 0 40px;
-								h1 {}
-								img {
-									width:100%;
-									margin-bottom:40px;
-									&:nth-child(n+1) {}
-									&:nth-child(1) {}
-									&:last-of-type {margin-bottom:0;}
-								}
-							}
-						}
-					}
-				}
-			}
-			header {}
-			footer {
-				.footer-wrapper {
-					padding:80px 80px 40px 80px;
-					.footer-content {
-						width:auto;
-						display:block;
-						ul {
-							a {
-								li {
-
-								}
-							}
-							li {
-								&#mail {
-									img {}
-								}
-								&#num {
-									img {}
-								}
-							}
-						}
-						&#footer-contact {}
-						&#footer-sm {}
-						&#footer-location {}
-					}
-				}
-			}
-		}
-	}
-}
-
-@media (max-width: 600px) {
-	html {
-		body {
-			.intro {
-				.headlinetext {
-					margin-top: -75px;
-					h1 {
-						font-size: 26px;
-					}
-					h2 {
-						font-size: 22px;
-					}
-				}
-			    video {
-			    }
-			}
-			.wrapper {
-				.portfolio {
-					padding:60px 20%;
-					.portfolio-inner {
-						h1 {}
-						h2 {}
-						p {}
-					}
-				}
-				.innerwrapper {
-					.content {
-						.desktop {
-				    	}
-				    	.mobile {
-				    	}
-						.sidebar3 {
-							&.mobile {
-								margin:30px;
-							}
-						    h2 {}
-						    a {
-					    		&:hover {}
-					    	}
-						    p {}
-						    ul {
-					    		li {}
-					    	}
-						    .fixed-footer-nav {
-								a {
-									div {
-										span {
-											.dashicons {}
-										}
-									}
-								}
-							}
-						}
-						.main3 {
-							&.mobile {
-								padding: 30px 30px 0 30px;
-							}
-							h1 {}
-							img {
-								&:nth-child(n+1) {}
-								&:nth-child(1) {}
-								&:last-of-type {}
-							}
-						}
-					}
-				}
-			}
-			header {}
-			footer {
-				.footer-wrapper {
-					padding:80px 50px 50px 50px;
-					.footer-content {
-						ul {
-							a {
-								li {
-
-								}
-							}
-							li {
-								&#mail {
-									img {}
-								}
-								&#num {
-									img {}
-								}
-							}
-						}
-						&#footer-contact {}
-						&#footer-sm {}
-						&#footer-location {}
-					}
-				}
-			}
-		}
-	}
-}
-
-@media (max-width: 420px) {
-	html {
-		body {
-			.intro {
-				.headlinetext {
-					margin-top: -61px;
-					h1 {
-						font-size: 16px;
-					}
-					h2 {
-						font-size: 16px;
-					}
-				}
-			}
-			.wrapper {
-				.portfolio {
-					.portfolio-inner {
-						h1 {}
-						h2 {}
-						p {}
-					}
-				}
-				.innerwrapper {
-					.content {
-						.desktop {
-				    	}
-				    	.mobile {
-				    	}
-						.sidebar3 {
-							&.mobile {
-								margin:30px 20px;
-							}
-						    h2 {}
-						    a {
-					    		&:hover {}
-					    	}
-						    p {}
-						    ul {
-					    		li {}
-					    	}
-						    .fixed-footer-nav {
-								a {
-									div {
-										span {
-											.dashicons {}
-										}
-									}
-								}
-							}
-						}
-						.main3 {
-							&.mobile {
-								padding: 40px 0;
-							}
-							h1 {}
-							img {
-								&:nth-child(n+1) {}
-								&:nth-child(1) {}
-								&:last-of-type {}
-							}
-						}
-					}
-				}
-			}
-			header {}
-			footer {
-				.footer-wrapper {
-					padding:50px 20px 50px 20px;
-					.footer-content {
-						ul {
-							a {
-								li {
-
-								}
-							}
-							li {
-								&#mail {
-									img {}
-								}
-								&#num {
-									img {}
-								}
-							}
-						}
-						&#footer-contact {}
-						&#footer-sm {}
-						&#footer-location {}
+					&#footer-sm, &#footer-info {
+						text-align: center;
 					}
 				}
 			}

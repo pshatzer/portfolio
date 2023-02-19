@@ -1,23 +1,24 @@
 <?php
 /**
- * The front page template file
+ * The template for displaying all pages
  */
-get_header(); 
-?>
 
-<html>
-	<body>
+get_header(); ?>
 
-		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+<div class="wrap">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
 
-		<div class="intro">
-  			<div class="headlinetext">
-  				<?php the_content(); ?>
-  			</div>
-		</div>
+			<?php
+			while ( have_posts() ) : the_post();
 
-		<?php endwhile;
-		endif; ?>
-		<?php wp_footer(); ?>
-	</body>
-</html>
+				get_template_part( 'template-parts/page/content', 'page' );
+
+			endwhile; // End of the loop.
+			?>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+</div><!-- .wrap -->
+
+<?php get_footer();

@@ -1,11 +1,15 @@
 <?php
-	/**
-	 * The front page template file
-	 */
-	get_header(); 
-	$video = get_field('bg_video');
-	$bio = get_field('bio');
-	$biobg = get_field('bio_bg');
+/**
+ * The front page template file
+ */
+get_header(); 
+$video = get_field('bg_video');
+$bio = get_field('bio');
+$biobg = get_field('bio_bg');
+$bio1 = get_field('bio_1');
+$bio2 = get_field('bio_2');
+$bio3 = get_field('bio_3');
+$bioEnd = get_field('bio_cta');
 ?>
 
 <html>
@@ -17,21 +21,26 @@
   			<div class="headlinetext">
   				<?php the_content(); ?>
   			</div>
-  			<video id="header-video" width="100%" height="100%" autoplay loop>
+  			<video id="header-video" width="100%" height="100%" muted="muted" autoplay loop>
   				<source src="<?php echo $video; ?>"  type="video/mp4" />
   			</video>
 		</div>
 
-		<?php 
-		endwhile;
-		endif; 
-		?>
+		<?php endwhile;
+		endif; ?>
 		<div id="wrap" class="wrapper">
-			<hr class="mobile">
-			<div id="port" class="portfolio" <?php if (!empty($biobg)) { ?> style="background-image:url('<?php echo $biobg;?>');" <?php } ?> >
-				<div class="portfolio-inner"><?php echo $bio; ?></div>
+        	<hr class="mobile">
+			<div id="port" class="portfolio" style="background-image:url(<?php echo $biobg; ?>);">
+				<div class="portfolio-inner">
+					<?php echo $bio; ?>
+					<div class="col-container">
+						<div class="left"><?php echo $bio1; ?></div>
+						<div class="middle"><?php echo $bio2; ?></div>
+						<div class="right"><?php echo $bio3; ?></div>
+					</div>
+					<?php echo $bioEnd; ?>
+				</div>
 			</div>
-			<hr class="mobile">
 			<?php $contentCount = 0;
 			$args = array(
             'post_type' => 'project',
@@ -57,7 +66,6 @@
 	    	$time = get_field('work_length');
 	    	$desc = get_field('work_description');
 	    	$url = get_field('work_site');
-	    	$iframe = get_field('work_iframe');
 	    	$dark = get_field('work_dark');
 	    	
 	    	if (has_term('gannett', 'project_type')){

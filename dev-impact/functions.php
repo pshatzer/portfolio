@@ -17,7 +17,6 @@ function enqueue_my_styles() {
     wp_enqueue_style( 'min-style', THEME_CSS . '/style.css' );
     wp_enqueue_style( 'bootstrap', THEME_CSS . '/bootstrap.min.css' );
     wp_enqueue_style( 'bootstrap-theme', THEME_CSS . '/bootstrap-theme.min.css' );
-    wp_enqueue_style( 'main-style', THEME_URI . '/style.css' );
 }
 add_action('wp_enqueue_scripts', 'enqueue_my_styles');
 
